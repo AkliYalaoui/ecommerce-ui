@@ -2,14 +2,12 @@ import { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaSmileWink } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import HomeNav from "../layouts/HomeNav";
-import Container from "../layouts/Container";
-import AuthForm from "../layouts/AuthForm";
-import AuthInput from "../layouts/AuthInput";
-import authImage from "../assets/auth.svg";
+import Container from "../../layouts/Container";
+import AuthForm from "../../layouts/AuthForm";
+import AuthInput from "../../layouts/AuthInput";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const AdminLogin = () => {
   const [loginCredentials, setLoginCredentials] = useState({
     email: "",
     password: "",
@@ -23,14 +21,11 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="shadow-sm">
-        <HomeNav />
-      </div>
       <Container>
         <div className="flex items-center p-4 mt-16 space-x-4">
-          <div className="flex-1 max-w-md m-auto">
+          <div className="flex-1 max-w-md m-auto shadow-md p-4">
             <div className="text-center text-3xl mb-6 text-gray-600">
-              <h1 className="mb-2">Welcome Back dear client</h1>
+              <h1 className="mb-2">Welcome Back dear ADMIN</h1>
               <div className="flex items-center justify-center">
                 <FaSmileWink />
               </div>
@@ -53,14 +48,6 @@ const Login = () => {
               <div>
                 <div>
                   <Link
-                    to="/register"
-                    className="text-purple-700 hover:underline"
-                  >
-                    You don't have an account? sign up now
-                  </Link>
-                </div>
-                <div>
-                  <Link
                     to="/password-reset"
                     className="text-purple-700 hover:underline"
                   >
@@ -75,13 +62,10 @@ const Login = () => {
               </div>
             </AuthForm>
           </div>
-          <div className="hidden lg:block max-w-lg">
-            <img src={authImage} alt="authentification" />
-          </div>
         </div>
       </Container>
     </div>
   );
-};
+}
 
-export default Login;
+export default AdminLogin
